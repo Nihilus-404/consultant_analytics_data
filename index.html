@@ -98,20 +98,21 @@
     /* Main Container */
     main {
       max-width: 1000px;
-      margin: 4rem auto;
+      margin: 3rem auto;
       padding: 0 1.5rem;
     }
 
-    /* Hero Section Améliorée */
+    /* Hero Section */
     .hero {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
       padding: 4.5rem 2.5rem;
       text-align: center;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
       position: relative;
       overflow: hidden;
+      margin-bottom: 3rem;
     }
 
     .hero::before {
@@ -154,7 +155,6 @@
       font-size: 1.2rem;
       max-width: 680px;
       margin: 0 auto 2.5rem auto;
-      font-weight: 400;
     }
 
     .hero-buttons {
@@ -181,7 +181,6 @@
     .btn-primary:hover {
       background-color: var(--accent-hover);
       transform: translateY(-2px);
-      box-shadow: 0 6px 12px -2px rgba(37, 99, 235, 0.3);
     }
 
     .btn-secondary {
@@ -202,6 +201,88 @@
       background-color: #f8fafc;
       border-color: #94a3b8;
       transform: translateY(-2px);
+    }
+
+    /* Section Notre Approche */
+    .approach-section {
+      margin-top: 4rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--accent-color);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #bfdbfe;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
     /* Footer */
@@ -230,8 +311,9 @@
     </div>
   </header>
 
-  <!-- Contenu Principal (Présentation) -->
+  <!-- Contenu Principal -->
   <main>
+    <!-- Hero Section -->
     <section class="hero">
       <span class="badge">⚡ Web Analytics & Data Consulting</span>
       <h1>Des données fiables.<br>Des décisions claires.</h1>
@@ -240,6 +322,38 @@
       <div class="hero-buttons">
         <a href="offres.html" class="btn-primary">Explorer les offres <span>→</span></a>
         <a href="https://cal.com/alexandre-sahir-zxou9e/diagnostic-data" target="_blank" class="btn-secondary">📅 Réserver un diagnostic (30 min)</a>
+      </div>
+    </section>
+
+    <!-- Section Notre Approche -->
+    <section class="approach-section">
+      <div class="section-header">
+        <span class="section-subtitle">Pourquoi 404 Solution Found</span>
+        <h2 class="section-title">Moins de bruit, plus de signaux utiles.</h2>
+        <p class="section-desc">Aujourd'hui, le problème n'est pas le manque de données, mais la surabondance d'informations inutilisables. Nous remettons de l'ordre dans votre écosystème analytics.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>Fiabilité absolue</h3>
+          <p>Chaque événement mesuré (GA4, GTM) est testé et contrôlé. Prenez vos décisions sur des chiffres exacts, sans doublons ni fuites de données.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Simplicité opérationnelle</h3>
+          <p>Fini les métriques inutiles. Nos tableaux de bord synthétiques (Looker Studio, Sheets) répondent directement aux enjeux stratégiques de vos équipes.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-icon">🤖</div>
+          <h3>Innovation pragmatique</h3>
+          <p>Automatisation de vos rapports et briques d'IA intégrées pour passer moins de temps à extraire la donnée et plus de temps à agir.</p>
+        </div>
       </div>
     </section>
   </main>
