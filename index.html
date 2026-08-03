@@ -11,6 +11,7 @@
       --text-main: #0f172a;
       --text-muted: #475569;
       --accent-color: #2563eb;
+      --accent-hover: #1d4ed8;
       --border-color: #e2e8f0;
     }
 
@@ -70,12 +71,17 @@
       color: var(--accent-color);
     }
 
-    .btn-cta {
+    .btn-header {
       background-color: var(--accent-color);
       color: white !important;
       padding: 0.5rem 1rem;
       border-radius: 6px;
       font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .btn-header:hover {
+      background-color: var(--accent-hover);
     }
 
     /* Container global */
@@ -90,22 +96,72 @@
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: 12px;
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
       margin-bottom: 2rem;
     }
 
+    .badge {
+      display: inline-block;
+      background-color: #eff6ff;
+      color: var(--accent-color);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      border: 1px solid #bfdbfe;
+    }
+
     .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
       letter-spacing: -0.02em;
+      color: var(--text-main);
+      line-height: 1.2;
     }
 
     .hero p {
       color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 1.5rem auto;
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background-color: #ffffff;
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
+      transition: background-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background-color: #f1f5f9;
     }
 
     /* Footer */
@@ -128,7 +184,7 @@
       <nav>
         <a href="index.html" class="active">Présentation</a>
         <a href="offres.html">Offres</a>
-        <a href="https://cal.com/alexandre-sahir-zxou9e/diagnostic-data" target="_blank" class="btn-cta">Réserver un diagnostic</a>
+        <a href="https://cal.com/alexandre-sahir-zxou9e/diagnostic-data" target="_blank" class="btn-header">Réserver un diagnostic</a>
       </nav>
     </div>
   </header>
@@ -136,9 +192,14 @@
   <!-- Contenu Principal (Présentation) -->
   <main>
     <section class="hero">
-      <h1>Transformez vos données web en décisions claires</h1>
-      <p>Web Analyst Freelance — J'accompagne les entreprises dans l'optimisation de leur tracking, la fiabilisation de leurs données et l'automatisation de leurs insights.</p>
-      <p><em>(Version de test — Contenu complet et photo à venir)</em></p>
+      <span class="badge">Web Analyst Freelance</span>
+      <h1>Des données fiables.<br>Des décisions claires.</h1>
+      <p>J'aide les entreprises et les équipes marketing à reprendre le contrôle de leurs données web. Du plan de marquage sur-mesure à l'automatisation de vos rapports par l'IA, je transforme des métriques brutes en leviers de croissance épurés et exploitables.</p>
+      
+      <div class="hero-buttons">
+        <a href="offres.html" class="btn-primary">Explorer les offres</a>
+        <a href="https://cal.com/alexandre-sahir-zxou9e/diagnostic-data" target="_blank" class="btn-secondary">Réserver un diagnostic (30 min)</a>
+      </div>
     </section>
   </main>
 
