@@ -112,7 +112,7 @@
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
       position: relative;
       overflow: hidden;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
 
     .hero::before {
@@ -203,8 +203,8 @@
       transform: translateY(-2px);
     }
 
-    /* Section Notre Approche */
-    .approach-section {
+    /* Common Section Styles */
+    section {
       margin-top: 4rem;
     }
 
@@ -238,6 +238,7 @@
       font-size: 1.05rem;
     }
 
+    /* Section Notre Approche */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -285,6 +286,77 @@
       line-height: 1.5;
     }
 
+    /* Section Stack Technique */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .tech-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      transition: border-color 0.2s;
+    }
+
+    .tech-item:hover {
+      border-color: var(--accent-color);
+    }
+
+    .tech-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .tech-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Section Méthodologie */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .step-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-color);
+      opacity: 0.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .step-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -326,7 +398,7 @@
     </section>
 
     <!-- Section Notre Approche -->
-    <section class="approach-section">
+    <section>
       <div class="section-header">
         <span class="section-subtitle">Pourquoi 404 Solution Found</span>
         <h2 class="section-title">Moins de bruit, plus de signaux utiles.</h2>
@@ -334,25 +406,85 @@
       </div>
 
       <div class="cards-grid">
-        <!-- Card 1 -->
         <div class="card">
           <div class="card-icon">🛡️</div>
           <h3>Fiabilité absolue</h3>
           <p>Chaque événement mesuré (GA4, GTM) est testé et contrôlé. Prenez vos décisions sur des chiffres exacts, sans doublons ni fuites de données.</p>
         </div>
 
-        <!-- Card 2 -->
         <div class="card">
           <div class="card-icon">📊</div>
           <h3>Simplicité opérationnelle</h3>
           <p>Fini les métriques inutiles. Nos tableaux de bord synthétiques (Looker Studio, Sheets) répondent directement aux enjeux stratégiques de vos équipes.</p>
         </div>
 
-        <!-- Card 3 -->
         <div class="card">
           <div class="card-icon">🤖</div>
           <h3>Innovation pragmatique</h3>
           <p>Automatisation de vos rapports et briques d'IA intégrées pour passer moins de temps à extraire la donnée et plus de temps à agir.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Stack Technique -->
+    <section>
+      <div class="section-header">
+        <span class="section-subtitle">Écosystème Technique</span>
+        <h2 class="section-title">Une maîtrise de la chaîne Data.</h2>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-name">Google Analytics 4</span>
+          <span class="tech-desc">Tracking & Analyse d'audience</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">Google Tag Manager</span>
+          <span class="tech-desc">Plan de marquage & Server-Side</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">Looker Studio</span>
+          <span class="tech-desc">Dashboards & Data Viz</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">Google Sheets</span>
+          <span class="tech-desc">Modélisation & Flux de données</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">Power BI</span>
+          <span class="tech-desc">Dashboards décisionnels</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-name">NotebookLM / IA</span>
+          <span class="tech-desc">Analyse qualitative & Insights</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Méthodologie -->
+    <section>
+      <div class="section-header">
+        <span class="section-subtitle">Méthodologie</span>
+        <h2 class="section-title">Comment nous collaborons</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Audit & Diagnostic (30 min)</h3>
+          <p>Analyse de votre existant et identification des incohérences ou manques dans votre tracking.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Implémentation & Structuration</h3>
+          <p>Configuration propre du plan de marquage, nettoyage des flux et création de vos rapports sur-mesure.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Restitution & Autonomie</h3>
+          <p>Livrables clairs, prise en main facilitée et intégration d'outils d'IA pour vos analyses futures.</p>
         </div>
       </div>
     </section>
