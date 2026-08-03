@@ -42,7 +42,7 @@
     }
 
     .nav-container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 1.2rem 1.5rem;
       display: flex;
@@ -97,22 +97,36 @@
 
     /* Main Container */
     main {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 3rem auto;
       padding: 0 1.5rem;
     }
 
-    /* Hero Section */
+    /* Hero Section bi-colonne */
     .hero {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 4.5rem 2.5rem;
-      text-align: center;
+      padding: 3.5rem 2.5rem;
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
       position: relative;
       overflow: hidden;
       margin-bottom: 4rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 3rem 1.5rem;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
     }
 
     .hero::before {
@@ -135,16 +149,16 @@
       font-weight: 700;
       padding: 0.4rem 1rem;
       border-radius: 50px;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       border: 1px solid #bfdbfe;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: 800;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       letter-spacing: -0.03em;
       color: var(--text-main);
       line-height: 1.15;
@@ -152,15 +166,13 @@
 
     .hero p {
       color: var(--text-muted);
-      font-size: 1.2rem;
-      max-width: 680px;
-      margin: 0 auto 2.5rem auto;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
     }
 
     .hero-buttons {
       display: flex;
       gap: 1rem;
-      justify-content: center;
       flex-wrap: wrap;
     }
 
@@ -168,7 +180,7 @@
       background-color: var(--accent-color);
       color: white;
       text-decoration: none;
-      padding: 0.9rem 1.8rem;
+      padding: 0.85rem 1.6rem;
       border-radius: 8px;
       font-weight: 600;
       box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
@@ -187,7 +199,7 @@
       background-color: #ffffff;
       color: var(--text-main);
       text-decoration: none;
-      padding: 0.9rem 1.8rem;
+      padding: 0.85rem 1.6rem;
       border-radius: 8px;
       font-weight: 600;
       border: 1px solid var(--border-color);
@@ -203,9 +215,16 @@
       transform: translateY(-2px);
     }
 
+    .hero-illustration {
+      width: 100%;
+      height: auto;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
     /* Common Section Styles */
     section {
-      margin-top: 4rem;
+      margin-top: 4.5rem;
     }
 
     .section-header {
@@ -238,7 +257,7 @@
       font-size: 1.05rem;
     }
 
-    /* Section Notre Approche */
+    /* Cards Grid */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -268,7 +287,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
       margin-bottom: 1.2rem;
       border: 1px solid #bfdbfe;
     }
@@ -286,7 +304,7 @@
       line-height: 1.5;
     }
 
-    /* Section Stack Technique */
+    /* Stack Technique Grid */
     .tech-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -300,61 +318,92 @@
       border-radius: 10px;
       padding: 1.2rem;
       display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-      transition: border-color 0.2s;
+      align-items: center;
+      gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
     .tech-item:hover {
       border-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .tech-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .tech-info {
+      display: flex;
+      flex-direction: column;
     }
 
     .tech-name {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--text-main);
     }
 
     .tech-desc {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
     }
 
-    /* Section Méthodologie */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+    /* Schéma de Flux Méthodologie */
+    .flow-container {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2.5rem 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
       margin-top: 2rem;
     }
 
-    .step-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 2rem;
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
       position: relative;
     }
 
-    .step-number {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--accent-color);
-      opacity: 0.3;
-      margin-bottom: 0.5rem;
+    @media (max-width: 768px) {
+      .flow-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .step-card h3 {
-      font-size: 1.15rem;
+    .flow-step {
+      background: var(--bg-gradient);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .flow-step-number {
+      display: inline-block;
+      background: var(--accent-color);
+      color: white;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .flow-step h3 {
+      font-size: 1.1rem;
       font-weight: 700;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       color: var(--text-main);
     }
 
-    .step-card p {
+    .flow-step p {
+      font-size: 0.9rem;
       color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
     /* Footer */
@@ -387,13 +436,54 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <span class="badge">⚡ Web Analytics & Data Consulting</span>
-      <h1>Des données fiables.<br>Des décisions claires.</h1>
-      <p>Accompagnement des entreprises et équipes marketing dans la maîtrise de leurs données web. Du plan de marquage sur-mesure à l'automatisation de vos rapports par l'IA, transformez des métriques brutes en leviers de croissance exploitables.</p>
-      
-      <div class="hero-buttons">
-        <a href="offres.html" class="btn-primary">Explorer les offres <span>→</span></a>
-        <a href="https://cal.com/alexandre-sahir-zxou9e/diagnostic-data" target="_blank" class="btn-secondary">📅 Réserver un diagnostic (30 min)</a>
+      <div class="hero-text">
+        <span class="badge">⚡ Web Analytics & Data Consulting</span>
+        <h1>Des données fiables.<br>Des décisions claires.</h1>
+        <p>Accompagnement des entreprises et équipes marketing dans la maîtrise de leurs données web. Du plan de marquage sur-mesure à l'automatisation de vos rapports par l'IA, transformez des métriques brutes en leviers de croissance exploitables.</p>
+        
+        <div class="hero-buttons">
+          <a href="offres.html" class="btn-primary">Explorer les offres <span>→</span></a>
+          <a href="https://cal.com/alexandre-sahir-zxou9e/diagnostic-data" target="_blank" class="btn-secondary">📅 Réserver un diagnostic (30 min)</a>
+        </div>
+      </div>
+
+      <!-- Illustration Dashboard Vectoriel -->
+      <div class="hero-illustration">
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="380" height="280" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+          <path d="M10 50H390" stroke="#F1F5F9" stroke-width="2"/>
+          <circle cx="35" cy="30" r="5" fill="#EF4444"/>
+          <circle cx="50" cy="30" r="5" fill="#F59E0B"/>
+          <circle cx="65" cy="30" r="5" fill="#10B981"/>
+          
+          <!-- Mini Carte 1 -->
+          <rect x="30" y="70" width="105" height="60" rx="8" fill="#EFF6FF"/>
+          <rect x="42" y="82" width="50" height="8" rx="4" fill="#93C5FD"/>
+          <rect x="42" y="98" width="70" height="14" rx="4" fill="#2563EB"/>
+          
+          <!-- Mini Carte 2 -->
+          <rect x="147" y="70" width="105" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <rect x="159" y="82" width="50" height="8" rx="4" fill="#CBD5E1"/>
+          <rect x="159" y="98" width="60" height="14" rx="4" fill="#0F172A"/>
+
+          <!-- Mini Carte 3 -->
+          <rect x="265" y="70" width="105" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <rect x="277" y="82" width="50" height="8" rx="4" fill="#CBD5E1"/>
+          <rect x="277" y="98" width="65" height="14" rx="4" fill="#10B981"/>
+
+          <!-- Graphique avec Courbe -->
+          <rect x="30" y="150" width="340" height="120" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+          <path d="M50 240 L110 210 L170 225 L230 180 L290 195 L350 160" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M50 240 L110 210 L170 225 L230 180 L290 195 L350 160 V250 H50 Z" fill="url(#paint0_linear)" opacity="0.15"/>
+          <circle cx="350" cy="160" r="5" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"/>
+          
+          <defs>
+            <linearGradient id="paint0_linear" x1="200" y1="160" x2="200" y2="250" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2563EB"/>
+              <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
     </section>
 
@@ -407,26 +497,32 @@
 
       <div class="cards-grid">
         <div class="card">
-          <div class="card-icon">🛡️</div>
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
           <h3>Fiabilité absolue</h3>
           <p>Chaque événement mesuré (GA4, GTM) est testé et contrôlé. Prenez vos décisions sur des chiffres exacts, sans doublons ni fuites de données.</p>
         </div>
 
         <div class="card">
-          <div class="card-icon">📊</div>
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
           <h3>Simplicité opérationnelle</h3>
           <p>Fini les métriques inutiles. Nos tableaux de bord synthétiques (Looker Studio, Sheets) répondent directement aux enjeux stratégiques de vos équipes.</p>
         </div>
 
         <div class="card">
-          <div class="card-icon">🤖</div>
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
           <h3>Innovation pragmatique</h3>
           <p>Automatisation de vos rapports et briques d'IA intégrées pour passer moins de temps à extraire la donnée et plus de temps à agir.</p>
         </div>
       </div>
     </section>
 
-    <!-- Section Stack Technique -->
+    <!-- Section Stack Technique avec Vrais Logos SVG -->
     <section>
       <div class="section-header">
         <span class="section-subtitle">Écosystème Technique</span>
@@ -434,57 +530,88 @@
       </div>
 
       <div class="tech-grid">
+        <!-- GA4 -->
         <div class="tech-item">
-          <span class="tech-name">Google Analytics 4</span>
-          <span class="tech-desc">Tracking & Analyse d'audience</span>
+          <svg class="tech-icon" viewBox="0 0 24 24" fill="none"><path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z" fill="#F9AB00"/><path d="M11 17H7V10H11V17Z" fill="#E37400"/><path d="M17 17H13V7H17V17Z" fill="#E37400"/></svg>
+          <div class="tech-info">
+            <span class="tech-name">Google Analytics 4</span>
+            <span class="tech-desc">Tracking & Audience</span>
+          </div>
         </div>
+
+        <!-- GTM -->
         <div class="tech-item">
-          <span class="tech-name">Google Tag Manager</span>
-          <span class="tech-desc">Plan de marquage & Server-Side</span>
+          <svg class="tech-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#246FEA"/><path d="M2 17L12 22L22 17" stroke="#246FEA" stroke-width="2" stroke-linecap="round"/><path d="M2 12L12 17L22 12" stroke="#246FEA" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="tech-info">
+            <span class="tech-name">Google Tag Manager</span>
+            <span class="tech-desc">Marquage & Server-Side</span>
+          </div>
         </div>
+
+        <!-- Looker Studio -->
         <div class="tech-item">
-          <span class="tech-name">Looker Studio</span>
-          <span class="tech-desc">Dashboards & Data Viz</span>
+          <svg class="tech-icon" viewBox="0 0 24 24" fill="none"><path d="M4 4H10V20H4V4Z" fill="#4285F4"/><path d="M14 10H20V20H14V10Z" fill="#EA4335"/><path d="M14 4H20V8H14V4Z" fill="#34A853"/></svg>
+          <div class="tech-info">
+            <span class="tech-name">Looker Studio</span>
+            <span class="tech-desc">Dashboards & Data Viz</span>
+          </div>
         </div>
+
+        <!-- Google Sheets -->
         <div class="tech-item">
-          <span class="tech-name">Google Sheets</span>
-          <span class="tech-desc">Modélisation & Flux de données</span>
+          <svg class="tech-icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" fill="#0F9D58"/><path d="M7 8H17M7 12H17M7 16H17" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="tech-info">
+            <span class="tech-name">Google Sheets</span>
+            <span class="tech-desc">Modélisation & Flux</span>
+          </div>
         </div>
+
+        <!-- Power BI -->
         <div class="tech-item">
-          <span class="tech-name">Power BI</span>
-          <span class="tech-desc">Dashboards décisionnels</span>
+          <svg class="tech-icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="12" width="4" height="8" rx="1" fill="#F2C811"/><rect x="10" y="8" width="4" height="12" rx="1" fill="#F2C811"/><rect x="16" y="4" width="4" height="16" rx="1" fill="#F2C811"/></svg>
+          <div class="tech-info">
+            <span class="tech-name">Power BI</span>
+            <span class="tech-desc">Reporting Décisionnel</span>
+          </div>
         </div>
+
+        <!-- NotebookLM / IA -->
         <div class="tech-item">
-          <span class="tech-name">NotebookLM / IA</span>
-          <span class="tech-desc">Analyse qualitative & Insights</span>
+          <svg class="tech-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#10B981" stroke-width="2"/><path d="M12 8V12L15 15" stroke="#10B981" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="tech-info">
+            <span class="tech-name">NotebookLM / IA</span>
+            <span class="tech-desc">Insights Qualitatifs</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Section Méthodologie -->
+    <!-- Section Méthodologie : Schéma de flux -->
     <section>
       <div class="section-header">
         <span class="section-subtitle">Méthodologie</span>
         <h2 class="section-title">Comment nous collaborons</h2>
       </div>
 
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">01</div>
-          <h3>Audit & Diagnostic (30 min)</h3>
-          <p>Analyse de votre existant et identification des incohérences ou manques dans votre tracking.</p>
-        </div>
+      <div class="flow-container">
+        <div class="flow-grid">
+          <div class="flow-step">
+            <span class="flow-step-number">01</span>
+            <h3>Audit & Diagnostic (30 min)</h3>
+            <p>Analyse de votre existant et identification des incohérences ou manques dans votre tracking.</p>
+          </div>
 
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <h3>Implémentation & Structuration</h3>
-          <p>Configuration propre du plan de marquage, nettoyage des flux et création de vos rapports sur-mesure.</p>
-        </div>
+          <div class="flow-step">
+            <span class="flow-step-number">02</span>
+            <h3>Implémentation & Structuration</h3>
+            <p>Configuration propre du plan de marquage, nettoyage des flux et création de vos rapports sur-mesure.</p>
+          </div>
 
-        <div class="step-card">
-          <div class="step-number">03</div>
-          <h3>Restitution & Autonomie</h3>
-          <p>Livrables clairs, prise en main facilitée et intégration d'outils d'IA pour vos analyses futures.</p>
+          <div class="flow-step">
+            <span class="flow-step-number">03</span>
+            <h3>Restitution & Autonomie</h3>
+            <p>Livrables clairs, prise en main facilitée et intégration d'outils d'IA pour vos analyses futures.</p>
+          </div>
         </div>
       </div>
     </section>
